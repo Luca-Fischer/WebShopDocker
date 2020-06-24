@@ -1,0 +1,25 @@
+<mat-list>
+  <div mat-subheader>Shopping Cart</div>
+  <mat-list-item *ngFor="let item of cart; let i = index">
+    <mat-icon mat-list-icon>shopping_cart</mat-icon>
+    <div mat-line>
+      <p style="float: left">
+        {{item.product._name}}
+        <br>
+        Size: {{item.size._name}} | Amount: {{item.amount}} x {{item.product._price}}€
+      </p>
+      <p style="float: right">
+        <button mat-icon-button aria-label="remove item" (click)="removeElement(i)" title="Remove Item">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </p>
+    </div>
+  </mat-list-item>
+</mat-list>
+
+Total: {{total}}€
+
+<button mat-button aria-label="order" (click)="orderNow()" title="Order">
+  Bestellen
+  <mat-icon>shopping_cart</mat-icon>
+</button>

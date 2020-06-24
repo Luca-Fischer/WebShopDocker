@@ -31,7 +31,6 @@ export class ProductDetailsComponent implements OnInit {
     // id aus der URL als Parameter holen
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
 
-
     // Produkt Details abfragen
     this.productsService.getProduct(this.id).subscribe(res => {
       this.product = mapProduct(res);
@@ -58,7 +57,8 @@ export class ProductDetailsComponent implements OnInit {
           if (this.amount > _stock.amount) {
             this.snackBar.open('You can not add the selected amount to the shopping cart', 'OK');
           } else {
-            //TODO: add to shopping cart service
+            this.shoppingCartService.addItem(this.product, this.size, this.amount);
+            this.snackBar.open('Successfully added product to shopping cart');
           }
         }
       }

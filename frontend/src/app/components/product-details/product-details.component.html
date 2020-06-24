@@ -21,16 +21,7 @@
       <input matInput type="number" [(ngModel)]="amount">
     </mat-form-field>
 
-    <table>
-      <tr>
-        <th>Size</th>
-        <th>Number</th>
-      </tr>
-      <tr *ngFor="let _stock of stock">
-        <td>{{_stock.size.name}}</td>
-        <td>{{_stock.amount}}</td>
-      </tr>
-    </table>
+
     <br>
     <div>
       <button mat-stroked-button color="primary" (click)="addToCart()">
@@ -40,14 +31,12 @@
     </div>
     <hr>
     <div>
-      <button mat-stroked-button class="astext">
-        <mat-icon mat-list-icon>shopping_cart</mat-icon>
+      <p>
         Standard-Lieferung Kostenlos
-      </button>
-      <br>
-      <button mat-stroked-button class="astext">
+      </p>
+      <p>
         2-4 Werktage
-      </button>
+      </p>
     </div>
   </div>
 </div>
