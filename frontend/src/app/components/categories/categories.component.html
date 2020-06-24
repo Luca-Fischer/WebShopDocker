@@ -1,0 +1,11 @@
+<mat-list>
+  <div mat-subheader>Categorien</div>
+  <mat-list-item *ngFor="let category of categories">
+    <mat-icon mat-list-icon>shopping_cart</mat-icon>
+      <div mat-line (click)="selectCategory(category)">{{category.name}}</div>
+  </mat-list-item>
+</mat-list>
+
+<div *ngIf="category">
+  Ausgewählte Kategorie: {{category.name}} (#{{category.id}})
+</div>

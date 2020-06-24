@@ -1,0 +1,40 @@
+<mat-form-field class="ml">
+  <mat-label>Filter</mat-label>
+  <mat-select>
+    <mat-option>
+      <mat-label>Marke&nbsp;&nbsp;</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let brand of brands" [value]="brand.name">
+          <div mat-line (click)="selectBrand(brand)">{{brand.name}}</div>
+        </mat-option>
+      </mat-select>
+    </mat-option>
+    <mat-option>
+      <mat-label>Kategorie&nbsp;&nbsp;</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let category of categories" [value]="category.name">
+          <div mat-line (click)="selectCategory(category)">{{category.name}}</div>
+        </mat-option>
+      </mat-select>
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<br>
+<mat-grid-list cols="4">
+  <mat-grid-tile *ngFor="let product of products">
+    <a [routerLink]="['/product-details', product.id]">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>{{product.name}}</mat-card-title>
+        <mat-card-subtitle>{{product.category.name}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image class="product-img" src="{{product.logo}}" alt="{{product.name}}">
+      <mat-card-actions>
+        <div class="ml">{{product.price}}$</div>
+        <button mat-button>Teilen</button>
+        <button mat-button>Kaufen</button>
+      </mat-card-actions>
+    </mat-card>
+    </a>
+  </mat-grid-tile>
+</mat-grid-list>

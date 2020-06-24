@@ -1,0 +1,53 @@
+<div id="parent" *ngIf="product">
+  <div id="">
+    <img mat-card-image class="product-img" src="{{product.logo}}" alt="{{product.name}}">
+  </div>
+  <div class="space">
+    <h1>{{product.name}}</h1>
+    <h3>{{product.price}}$</h3>
+    <mat-form-field>
+      <mat-label>Size</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let _stock of stock" [value]="_stock.size.name" (onSelectionChange)="setSize(_stock.size)">
+          {{_stock.size.name}} ({{_stock.amount}})
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field class="example-form-field">
+      <mat-label>Amount</mat-label>
+      <input matInput type="number" [(ngModel)]="amount">
+    </mat-form-field>
+
+    <table>
+      <tr>
+        <th>Size</th>
+        <th>Number</th>
+      </tr>
+      <tr *ngFor="let _stock of stock">
+        <td>{{_stock.size.name}}</td>
+        <td>{{_stock.amount}}</td>
+      </tr>
+    </table>
+    <br>
+    <div>
+      <button mat-stroked-button color="primary" (click)="addToCart()">
+        In den Warenkorb
+        <mat-icon mat-list-icon>shopping_cart</mat-icon>
+      </button>
+    </div>
+    <hr>
+    <div>
+      <button mat-stroked-button class="astext">
+        <mat-icon mat-list-icon>shopping_cart</mat-icon>
+        Standard-Lieferung Kostenlos
+      </button>
+      <br>
+      <button mat-stroked-button class="astext">
+        2-4 Werktage
+      </button>
+    </div>
+  </div>
+</div>
