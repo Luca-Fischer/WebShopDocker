@@ -2,14 +2,14 @@
 
 start backend:
 - cd to backend folder
-- docker-compose up
-- brew install mongodb-community
+- brew install mongodb-community (once)
 - npm install
 - npm run seed
 - npm run start
+- docker-compose up
 
 start frontend:
 - cd to frontend folder
-- docker-compose up
-- brew install angular-cli
+- brew install angular-cli (once)
 - ng serve
+- docker-compose up
