@@ -9,5 +9,5 @@ start backend:
 start frontend:
 - cd to frontend folder
 - docker-compose up
--brew install angular-cli
--ng serve
+- brew install angular-cli
+- ng serve
