@@ -22,8 +22,10 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import {MatTableModule} from "@angular/material/table";
 import {MatInputModule} from "@angular/material/input";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import { UsersComponent } from './components/users/users.component';
+import {MatCheckboxModule} from "@angular/material/checkbox";
 
 
 @NgModule({
@@ -32,7 +34,8 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     ProductsComponent,
     CategoriesComponent,
     ShoppingCartsComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,11 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     MatButtonToggleModule,
     MatTableModule,
     MatInputModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    ReactiveFormsModule,
+    MatCheckboxModule,
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

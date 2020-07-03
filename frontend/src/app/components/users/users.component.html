@@ -1,0 +1,72 @@
+<h1 class="ml-mt">Dies ist ein TestWebShop! Keine der Daten werden gespeichert.</h1>
+<h2 class="ml-mt">Als Gast anmelden</h2>
+<div *ngIf="check == false">
+  <form class="example-form ml-mt" name="myForm">
+    <mat-form-field class="example-full-width">
+      <mat-label>Vorname</mat-label>
+      <input matInput>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width ml-20">
+      <mat-label>Nachname</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Email<span id="required">*</span></mat-label>
+      <input matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher">
+      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Straße</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <mat-form-field class="example-full-width ml-20">
+      <mat-label>Hausnummer</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Postleitzahl</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <mat-form-field class="example-full-width ml-20">
+      <mat-label>Stadt</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Telefonnummer</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <br>
+    <br>
+    <h2>Zahlungsarten</h2>
+    <mat-form-field appearance="fill">
+      <mat-label>Zahlungsarten</mat-label>
+      <mat-select>
+        <mat-option value="option">PayPal</mat-option>
+        <mat-option value="option">VISA</mat-option>
+        <mat-option value="option">AMEX</mat-option>
+        <mat-option value="option">SEPA</mat-option>
+        <mat-option value="option">Mastercard</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+    <div>
+      <span>Da die Webseite vermutlich mehrmals durchgelaufen wird (um alle eventualitäten zu testen), haben wir lediglich die
+        Email als 'required' angegeben</span>
+    </div>
+    <br>
+    <button mat-stroked-button (click)="FunctionCheck()">Kauf abschließen</button>
+    <br>
+    <br>
+  </form>
+</div>

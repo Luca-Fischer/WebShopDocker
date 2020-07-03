@@ -11,9 +11,8 @@ services:
             context: ./backend
         image: webshopdocker_backend:latest
         environment:
-            - DB_CONNECTION=mongodb://root:LSuFDaaenPfdVMi4S@database:27017/online-shop?authSource=admin
+            - DB_CONNECTION=mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false
             - PORT=8080
-            - JWT_KEY="5AE34D147B8ADA82FB2FAA85DEC52"
         ports:
             - 8080:8080
         depends_on:
@@ -29,7 +28,7 @@ services:
         volumes:
             - mongodata:/data/db
         ports:
-            - 8888:27017
+            - 3000:27017
 
     frontend:
         container_name: frontend-angular

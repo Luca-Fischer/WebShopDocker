@@ -18,8 +18,11 @@
 </mat-list>
 
 Total: {{total}}€
-
-<button mat-button aria-label="order" (click)="orderNow()" title="Order">
-  Bestellen
-  <mat-icon>shopping_cart</mat-icon>
-</button>
+<div *ngIf="total != 0;else other">
+  <br>
+  <button mat-button aria-label="order" (click)="orderNow()" title="Order">
+    <a mat-button [routerLink]="'/users'">Kaufen</a>
+    <mat-icon>shopping_cart</mat-icon>
+  </button>
+</div>
+<ng-template #other><br>Einakufswagen ist leer</ng-template>

@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "seed": "node database/seeder"
+    "seed": "node ./database/seeder"
   },
   "keywords": [
     "mongodb",
@@ -14,7 +14,7 @@
     "mongoosejs",
     "database relationships"
   ],
-  "author": "Connor Leech",
+  "author": "Luca Fischer & Robin Hoffmann",
   "license": "MIT",
   "dependencies": {
     "bluebird": "^3.5.5",

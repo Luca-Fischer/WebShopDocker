@@ -58,7 +58,7 @@ export class ProductDetailsComponent implements OnInit {
             this.snackBar.open('You can not add the selected amount to the shopping cart', 'OK');
           } else {
             this.shoppingCartService.addItem(this.product, this.size, this.amount);
-            this.snackBar.open('Successfully added product to shopping cart');
+            this.snackBar.open('Erfolgreich zum Einkaufswagen hinzugefügt');
           }
         }
       }

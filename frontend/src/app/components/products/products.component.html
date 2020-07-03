@@ -20,37 +20,56 @@
   </mat-select>
 </mat-form-field>
 <br>
+
 <mat-grid-list cols="4">
   <mat-grid-tile *ngFor="let product of products">
     <a [routerLink]="['/product-details', product.id]">
-    <mat-card class="example-card">
-      <mat-card-header>
-        <mat-card-title>{{product.name}}</mat-card-title>
-        <mat-card-subtitle>{{product.category.name}}</mat-card-subtitle>
-      </mat-card-header>
-      <img mat-card-image class="product-img" src="{{product.logo}}" alt="{{product.name}}">
-      <mat-card-actions>
-        <div class="ml">{{product.price}}$</div>
-        <button mat-button>Teilen</button>
-        <button mat-button>Kaufen</button>
-      </mat-card-actions>
-    </mat-card>
+      <div id="frame">
+        <mat-card-subtitle>{{product.name}}</mat-card-subtitle>
+        <br>
+        <mat-card-content>{{product.category.name}}</mat-card-content>
+        &nbsp;&nbsp;&nbsp;
+        <mat-card-content style="text-align: right">{{product.price}}€</mat-card-content>
+        <br>
+        <img mat-card-image src="{{product.logo}}" alt="{{product.name}}" class="product-img">
+      </div>
     </a>
   </mat-grid-tile>
 </mat-grid-list>
-
+<!--
+<mat-grid-list cols="4">
+  <mat-grid-tile *ngFor="let product of products">
+    <a [routerLink]="['/product-details', product.id]">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>{{product.name}}</mat-card-title>
+          <mat-card-subtitle>{{product.category.name}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image class="product-img" src="{{product.logo}}" alt="{{product.name}}">
+        <mat-card-actions>
+          <div class="ml">{{product.price}}$</div>
+        </mat-card-actions>
+      </mat-card>
+    </a>
+  </mat-grid-tile>
+</mat-grid-list>
+-->
+<!--
 <mat-list>
   <div mat-subheader>Produkte</div>
   <mat-list-item *ngFor="let product of products; let i = index">
-    <img class="product-img" src="{{product.logo}}" alt="{{product.name}}">
-    <div mat-line>
+    <a [routerLink]="['/product-details', product.id]">
+      <img class="product-img" src="{{product.logo}}" alt="{{product.name}}">
+      <div mat-line>
         {{product.name}}
-    </div>
-    <div mat-line>
-      {{product.category.name}}
-    </div>
-    <div mat-line>
-      {{product.price}}€
-    </div>
+      </div>
+      <div mat-line>
+        {{product.category.name}}
+      </div>
+      <div mat-line>
+        {{product.price}}€
+      </div>
+    </a>
   </mat-list-item>
 </mat-list>
+-->
