@@ -4,7 +4,7 @@ var path = require('path'),
 module.exports = {
 	development: {
 		rootPath: rootPath,
-		db: 'mongodb://localhost/docker-app',
+		db: 'mongodb://database:27017/docker-app',
 		port: process.env.PORT || 3000
 	},
 	production: {

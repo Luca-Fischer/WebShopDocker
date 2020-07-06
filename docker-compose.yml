@@ -11,7 +11,7 @@ services:
             context: ./backend
         image: webshopdocker_backend:latest
         environment:
-            - DB_CONNECTION=mongodb://localhost:27017/
+            - DB_CONNECTION=mongodb://database:27017/docker-app?authSource=admin
             - PORT=8080
         ports:
             - 8080:8080
